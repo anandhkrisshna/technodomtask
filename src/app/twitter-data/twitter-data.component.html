@@ -1,0 +1,56 @@
+
+
+<style>
+    table {
+        width:100%;
+    }
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 15px;
+        text-align: left;
+    }
+    table#t01 tr:nth-child(even) {
+        background-color: #eee;
+    }
+    table#t01 tr:nth-child(odd) {
+       background-color: #fff;
+    }
+    table#t01 th {
+        background-color: black;
+        color: white;
+    }
+    </style>   
+  <div>
+     
+
+        <table id="t01">
+            <h2>Twitter Data</h2>
+            <tr>
+              <th>Created</th>
+              <th>ID</th> 
+              <th>Body</th>
+       
+            </tr>
+            <tr *ngFor="let row of TwitterData">
+              <td>{{row.created_at}}</td>
+              <td>{{row.id}}</td>
+              <td>{{row.text}}</td>
+            </tr>
+        </table>
+
+        <table id="t01">
+            <h2>Twitter Images</h2>
+            <tr>
+              <th>ID</th> 
+              <th>Images</th>
+            </tr>
+            <tr *ngFor="let row of TwitterImages">
+              <td>{{row.id}}</td>
+              <td><img src="{{row.media_url}}"></td>
+            </tr>
+        </table>
+  
+  </div>

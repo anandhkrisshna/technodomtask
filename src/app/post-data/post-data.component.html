@@ -1,0 +1,42 @@
+<style>
+  table {
+      width:100%;
+  }
+  table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+  }
+  th, td {
+      padding: 15px;
+      text-align: left;
+  }
+  table#t01 tr:nth-child(even) {
+      background-color: #eee;
+  }
+  table#t01 tr:nth-child(odd) {
+     background-color: #fff;
+  }
+  table#t01 th {
+      background-color: black;
+      color: white;
+  }
+  </style>   
+<div>
+   
+    <h2>Post Data</h2>
+      <table id="t01">
+          <tr>
+            <th>id</th>
+            <th>Title</th> 
+            <th>Body</th>
+            <th>Status</th>
+          </tr>
+          <tr *ngFor="let row of _postsArray">
+            <td>{{row.id}}</td>
+            <td>{{row.title}}</td>
+            <td>{{row.body}}</td>
+            <td><a [routerLink]="['/view',row.id]">View Data</a></td>
+          </tr>
+      </table>
+
+</div>
